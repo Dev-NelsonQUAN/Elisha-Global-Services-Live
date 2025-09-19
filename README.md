@@ -103,9 +103,6 @@ A modern, responsive web application for comprehensive logistics and travel serv
 
 3. **Environment Setup**
    Create a `.env.local` file in the root directory:
-   \`\`\`env
-   # MongoDB
-   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/elisha-global
 
    # Cloudinary
    CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
