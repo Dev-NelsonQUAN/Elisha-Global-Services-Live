@@ -1,34 +1,33 @@
-"use client"; // This directive marks the component as a Client Component for interactivity and hooks.
+"use client"; 
 
-import { motion } from "framer-motion"; // For rich animations.
+import { motion } from "framer-motion"; 
 import {
   Plane,
   FileText,
   DollarSign,
   MapPin,
-  Briefcase, // Changed from Package to Briefcase as per your data
+  Briefcase,
   Hotel,
-  Package, // Used for 'Delivery Service to Portugal'
+  Package, 
   Shield,
   GraduationCap,
   Car,
-  Building, // Changed from Home to Building for 'Estate Agent'
+  Building, 
   Truck,
   Globe,
   CreditCard,
   Phone,
-} from "lucide-react"; // All necessary Lucide icons.
+} from "lucide-react"; 
 
-// IMPORTANT: Changed to 'export default function ServicesSection()' to align with typical Next.js default imports.
+
 export default function ServicesSection() {
-  // Data for the services offered. Each service includes an icon, title, description, and color for gradients.
+  
   const services = [
     {
       icon: Car,
       title: "Airport Drop and Pickup",
       description:
         "Reliable airport transfer services for seamless travel experiences",
-      // color: 'from-primary to-primary-light' // Uses custom color variables from globals.css
       color: "from-primary to-rose-400",
     },
     {
@@ -109,7 +108,7 @@ export default function ServicesSection() {
       color: "from-primary to-rose-400",
     },
     {
-      icon: Globe, // Re-using Globe for Passport Application as per your icon list
+      icon: Globe, 
       title: "Passport Application",
       description: "Streamlined passport application and renewal services",
       // color: 'from-secondary to-cyan-400'
@@ -126,11 +125,10 @@ export default function ServicesSection() {
       icon: GraduationCap,
       title: "Study Abroad Assistant",
       description: "Complete support for international education applications",
-      // color: 'from-secondary to-violet-400'
       color: "from-primary to-rose-400",
     },
     {
-      icon: Phone, // Re-using Phone for Visa Application as per your icon list
+      icon: Phone,
       title: "Visa Application",
       description:
         "Expert assistance with visa applications for all destinations",
@@ -144,10 +142,9 @@ export default function ServicesSection() {
         {/* Section Heading */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }} // Animates when the component comes into view.
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }} // Animation plays only once.
-          className="text-center mb-16"
+          viewport={{ once: true }} 
         >
           <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6">
             Our Premium{" "}
@@ -165,17 +162,17 @@ export default function ServicesSection() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <motion.div
-              key={service.title} // Unique key for each service item.
+              key={service.title} 
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }} // Staggered animation delay.
+              transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -5, scale: 1.02 }} // Hover animation: slight lift and scale.
-              className="group" // Enables group-hover effects on child elements.
+              whileHover={{ y: -5, scale: 1.02 }} 
+              className="group"
             >
               <div className="bg-card border border-border/50 rounded-xl p-6 h-full shadow-card hover:shadow-elegant transition-all duration-300">
                 <div className="flex items-center space-x-4 mb-4">
-                  {/* Service Icon with gradient background and glow effect. */}
+             
                   <div
                     className={`p-3 rounded-lg bg-gradient-to-br ${service.color} shadow-glow`}
                   >
@@ -203,7 +200,6 @@ export default function ServicesSection() {
           ))}
         </div>
 
-        {/* Call to Action for custom solutions. */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -212,13 +208,14 @@ export default function ServicesSection() {
           className="text-center mt-12"
         >
           <p className="text-sm text-muted-foreground mb-4">
-            💡 Need a custom solution? We're here to help!
+            {/* 💡 */}
+             Need a custom solution? We're here to help!
           </p>
           <motion.button
-            whileHover={{ scale: 1.05 }} // Hover animation: slight scale up.
-            whileTap={{ scale: 0.95 }} // Tap animation: slight scale down.
+            whileHover={{ scale: 1.05 }} 
+            whileTap={{ scale: 0.95 }}
             className="px-6 py-3 bg-gradient-primary text-primary-foreground rounded-lg font-medium shadow-elegant hover:shadow-glow transition-all duration-300"
-            // Assuming there's a contact section to scroll to.
+
             onClick={() =>
               document
                 .getElementById("contact")
