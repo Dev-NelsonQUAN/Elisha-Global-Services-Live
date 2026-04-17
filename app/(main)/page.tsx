@@ -8,7 +8,6 @@ import {
   Target, Mail, Phone, MessageCircle, ChevronDown, Clock,
 } from "lucide-react"; // All necessary Lucide icons.
 
-// --- FIX #1: The import for AnimatedBackground is now active ---
 import {AnimatedBackground} from "@/components/ui/animated-background"; 
 import ShipmentForm from "@/components/ShipmentForm";
 import HeroSection from "@/components/sections/hero-section";
