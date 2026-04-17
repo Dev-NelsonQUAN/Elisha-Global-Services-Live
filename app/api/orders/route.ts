@@ -1,26 +1,17 @@
 import { type NextRequest, NextResponse } from "next/server"
 
-// Mock database for now - replace with actual MongoDB connection
 const orders: any[] = []
 
-// Mock auth function for development
 function getAuth(request: NextRequest) {
   try {
     const token = request.headers.get("authorization")?.replace("Bearer ", "")
 
     if (!token) {
-      // Fallback for development
       return { userId: "dev-user-1", role: "user" }
     }
 
-    // In production, verify JWT token
-    // const decoded = jwt.verify(token, process.env.JWT_SECRET!) as any
-    // return { userId: decoded.userId, role: decoded.role }
-
-    // Mock verification for development
     return { userId: "dev-user-1", role: "user" }
   } catch {
-    // Fallback for development
     return { userId: "dev-user-1", role: "user" }
   }
 }
@@ -35,24 +26,19 @@ export async function POST(request: NextRequest) {
     const pickupLocation = formData.get("pickupLocation") as string
     const image = formData.get("image") as File | null
 
-    // Validate required fields
     if (!weight || !itemType || !pickupLocation) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 })
     }
 
-    // Calculate price
     const weightNum = Number.parseFloat(weight)
     const pricePerKg = itemType === "food" ? 10 : 15
     const price = weightNum * pricePerKg
 
-    // Handle image upload (mock for now)
     let imageUrl = null
     if (image) {
-      // In production, upload to Cloudinary
       imageUrl = `/placeholder.svg?height=200&width=200&text=Package+Image`
     }
 
-    // Create order
     const order = {
       id: `ORD-${Date.now()}`,
       weight: weightNum,
@@ -74,7 +60,6 @@ export async function POST(request: NextRequest) {
 
     orders.push(order)
 
-    // Mock email notification
     console.log(`Email sent to user for order ${order.id}`)
 
     return NextResponse.json({
@@ -94,7 +79,6 @@ export async function GET(request: NextRequest) {
     const isAdmin = searchParams.get("admin") === "true" || role === "admin"
 
     if (isAdmin) {
-      // Return all orders for admin
       return NextResponse.json({
         success: true,
         orders: orders,
@@ -106,7 +90,6 @@ export async function GET(request: NextRequest) {
         },
       })
     } else {
-      // Return user-specific orders
       const userOrders = orders.filter((order) => order.userId === userId)
       return NextResponse.json({
         success: true,
@@ -140,7 +123,6 @@ export async function PUT(request: NextRequest) {
       return NextResponse.json({ error: "Order not found" }, { status: 404 })
     }
 
-    // Update order status
     orders[orderIndex].status = status
     orders[orderIndex].trackingHistory.push({
       status,
