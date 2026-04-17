@@ -43,10 +43,8 @@ const Footer = () => {
 
   return (
     <footer className="bg-primary text-contrast-dark">
-      {/* Main Footer Content */}
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Company Info */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -68,7 +66,6 @@ const Footer = () => {
               visa applications, we handle all your international needs with professionalism and care.
             </p>
 
-            {/* Contact Info */}
             <div className="space-y-2">
               <div className="flex items-center space-x-2 text-sm text-contrast-dark/80">
                 <Mail className="h-4 w-4 text-secondary" />
@@ -85,7 +82,6 @@ const Footer = () => {
             </div>
           </motion.div>
 
-          {/* Services */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -107,7 +103,6 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Support */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -129,7 +124,6 @@ const Footer = () => {
             </ul>
           </motion.div>
 
-          {/* Locations & Social */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -152,7 +146,6 @@ const Footer = () => {
               ))}
             </div>
 
-            {/* Social Links */}
             <div className="pt-4">
               <h4 className="text-sm font-semibold text-contrast-dark mb-3">Follow Us</h4>
               <div className="flex space-x-3">
@@ -174,7 +167,6 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Bottom Bar */}
       <motion.div
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
@@ -187,7 +179,6 @@ const Footer = () => {
               © {currentYear} Elisha Global Services. All rights reserved.
             </div>
 
-            {/* Working Hours */}
             <div className="flex items-center space-x-4 text-sm text-contrast-dark/70">
               <div className="flex items-center space-x-1">
                 <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />

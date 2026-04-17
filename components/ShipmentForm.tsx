@@ -152,7 +152,6 @@ const ShipmentForm = () => {
             />
           </motion.div>
 
-          {/* Item Type */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -166,11 +165,9 @@ const ShipmentForm = () => {
             <div className="grid grid-cols-2 gap-4">
               {[
                 { value: "food", label: "Food Items", price: "€10/kg", 
-                  // icon: "🍎" 
 
                 },
                 { value: "other", label: "Other Items", price: "€15/kg", 
-                  // icon: "📦"
 
                  },
               ].map((type) => (
@@ -204,7 +201,6 @@ const ShipmentForm = () => {
             </div>
           </motion.div>
 
-          {/* Pickup Location */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -232,7 +228,6 @@ const ShipmentForm = () => {
             </select>
           </motion.div>
 
-          {/* Image Upload */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -279,7 +274,6 @@ const ShipmentForm = () => {
             </div>
           </motion.div>
 
-          {/* Carrier Schedule Info */}
           <motion.div
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -298,7 +292,6 @@ const ShipmentForm = () => {
             </div>
           </motion.div>
 
-          {/* Price Display */}
           {formData.weight && (
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
@@ -322,7 +315,6 @@ const ShipmentForm = () => {
             </motion.div>
           )}
 
-          {/* Submit Button */}
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.6 }}>
             <motion.button
               type="submit"
@@ -350,7 +342,6 @@ const ShipmentForm = () => {
             </motion.button>
           </motion.div>
 
-          {/* Status Messages */}
           {submitStatus === "success" && (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
